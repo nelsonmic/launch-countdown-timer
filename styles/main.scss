@@ -1,0 +1,185 @@
+body{
+  margin:0;
+  padding:0;
+  background-color: #1E1F29;
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight:700;
+  font-size:14px;
+  text-transform: uppercase;
+  height: 100vh;
+}
+
+.mask{
+  width:100%;
+  height: 100vh;
+  position:absolute;
+  z-index:-5;
+
+  svg{
+    width:100%;
+    height:100%;
+  }
+}
+
+main{
+  position:relative;
+  top:20%;
+
+  header{
+    width:80%;
+    margin:0 auto;
+    h1{
+      margin:0;
+      color:#ffffff;
+      text-align: center;
+      font-size:2em;
+    }
+  }
+  
+  .container{
+    position: relative;
+    top:5em;
+    width:90%;
+    display:flex;
+    justify-content: space-between;
+    margin:0 auto;
+
+    .card{
+      position: relative;
+      width:75px;
+      height:100px;
+      border-radius: 10px;
+      box-shadow: 4px 8px hsl(234, 17%, 12%);
+
+      .card__top-part{
+        height:51%;
+        background-color:#343650;
+        border-radius: 10px 10px 0 0;
+        border-bottom: 3px solid #3e4055;
+      }
+      .card__bottom-part{
+        position: relative;
+        bottom:50%;
+        height:97%;
+        background-color:#343650;
+        z-index:-3;
+        border-radius: 10px;
+        
+      }
+      p{
+        position:absolute;
+        bottom:-.4em;
+        width:100%;
+        color:#FB6087;
+        font-size:2.5em;
+        text-align:center;
+        letter-spacing: .05em;
+      }
+    }
+    .card::before{
+      content:'';
+      width:8px;
+      height:8px;
+      display:block;
+      position:absolute;
+      top:51%;
+      background-color: #191A24;
+      opacity:0.7;
+      border-radius: 0 5px 5px 0;
+    }
+    .card::after{
+      content:'';
+      width:8px;
+      height:8px;
+      display:block;
+      position:absolute;
+      bottom:41.5%;
+      right:0;
+      background-color: #191A24;
+      opacity:0.7;
+      border-radius: 5px 0 0 5px;
+    }
+    .time-desc{
+      color: #B9BACF;
+      text-align: center;
+    }
+  }
+}
+
+footer{
+  position: fixed;
+  bottom:0;
+  width:100%;
+  height:20vh;
+  svg{
+    position:relative;
+    top:1em;
+    width:100%;
+  }
+  .socials{
+    position:absolute;
+    top:57%;
+    left:0;
+    right:0;
+    width:150px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    .social-icon{
+      margin-left:1em;
+      fill:#8385A9;
+    }
+
+    .social-icon:hover{
+      fill:#FB6087;
+      cursor: pointer;
+    }
+  }
+}
+
+
+// responsive styling for controlling card width and height
+
+@media only screen and (min-width: 540px) {
+
+main{
+  .container{
+    .card{
+      width:100px;
+    }
+  }
+}
+};
+
+@media only screen and (min-width: 700px) {
+
+  main{
+    .container{
+      width:60%;
+      .card{
+        width:105px;
+        height:120px;
+        p{
+          bottom:-.1em;
+        }
+      }
+    }
+  }
+  };
+
+  @media only screen and (min-width: 997px) {
+
+    main{
+      .container{
+        width:40%;
+        .card{
+          width:105px;
+          height:120px;
+          p{
+            bottom:-.1em;
+          }
+        }
+      }
+    }
+    };
